@@ -68,16 +68,16 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   ✅ Commit: `Implement list_all_as_string function in Notification repository.`
     -   ✅ Write answers of your learning module's "Reflection Subscriber-1" questions in this README.
 -   **STAGE 3: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Commit: `Implement receive_notification function in Notification service.`
-    -   [ ] Commit: `Implement receive function in Notification controller.`
-    -   [ ] Commit: `Implement list_messages function in Notification service.`
-    -   [ ] Commit: `Implement list function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
+    -   ✅ Commit: `Create Notification service struct skeleton.`
+    -   ✅ Commit: `Implement subscribe function in Notification service.`
+    -   ✅ Commit: `Implement subscribe function in Notification controller.`
+    -   ✅ Commit: `Implement unsubscribe function in Notification service.`
+    -   ✅ Commit: `Implement unsubscribe function in Notification controller.`
+    -   ✅ Commit: `Implement receive_notification function in Notification service.`
+    -   ✅ Commit: `Implement receive function in Notification controller.`
+    -   ✅ Commit: `Implement list_messages function in Notification service.`
+    -   ✅ Commit: `Implement list function in Notification controller.`
+    -   ✅ Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -94,3 +94,15 @@ This is the place for you to write reflections:
     Dalam Rust, `static` variables secara default adalah immutable. Tujuannya adalah untuk mencegah masalah _concurrency_ dan menjaga keamanan _environment multithreading_. Maka, di Rust diperlukan `lazy_static` untuk memutasi variabel `static`.
 
 #### Reflection Subscriber-2
+
+1. Have you explored things outside of the steps in the tutorial, for example: `src/lib.rs`? If not, explain why you did not do so. If yes, explain things that you have learned from those other parts of code.
+
+    Saya baru mengeksplor sedikit saja dari bagian kode yang lain seperti `src/lib.rs`. Pada file tersebut ada potongan kode _function_ `compose_error_response` yang beberapa kali digunakan pada tutorial. Dari hasil yang saya pelajari, potongan kode tersebut mengembalikan respons khusus error response yang berisi data JSON. 
+
+2. Since you have completed the tutorial by now and have tried to test your notification system by spawning multiple instances of Receiver, explain how Observer pattern eases you to plug in more subscribers. How about spawning more than one instance of Main app, will it still be easy enough to add to the system?
+
+    Dengan _pattern_ yang telah dibuat, sepertinya menambahkan lebih dari satu _instance_ di Main App memungkinkan untuk dilakukan karena Observer _pattern_ sudah memudahkan penambahan _subscriber_. Setiap Main App akan punya Observer _pattern_-nya sendiri sehingga setiap instance dapat memiliki `SUBSCRIBER` yang berbeda dan notifikasi yang sesuai dengan _subscriber_ pada _instance_ tertentu.
+
+3. Have you tried to make your own Tests, or enhance documentation on your Postman collection? If you have tried those features, tell us whether it is useful for your work (it can be your tutorial work or your Group Project).
+
+    Saya belum mencoba test atau dokumentasi tambahan di Postman Collection, namun menurut saya jika dilakukan akan sangat membantu untuk mengetahui jalannya program. Terutama untuk proyek kelompok yang dikerjakan bersama, adanya _testing_ akan membantu setiap anggota kelompok untuk mengecek dan memverifikasi apakah program sudah mengirimkan _response_ yang sesuai .
